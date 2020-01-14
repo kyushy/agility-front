@@ -1,0 +1,27 @@
+{
+    "name": "base",
+    "sources": [
+        {"id": "V1", "q": "Les individus et leurs interactions plus que les processus et les outils"},
+        {"id": "V2", "q": "Des logiciels opérationnels plus qu’une documentation exhaustive"},
+        {"id": "V3", "q": "La collaboration avec les clients plus que la négociation contractuelle"},
+        {"id": "V4", "q": "L’adaptation au changement plus que le suivi d’un plan"},
+        {"id": "P1", "q": "Notre plus haute priorité est de satisfaire le client en livrant rapidement et régulièrement des fonctionnalités à grande valeur ajoutée"},
+        {"id": "P2", "q": "Accueillez positivement les changements de besoins,même tard dans le projet. Les processus Agiles exploitent le changement pour donner un avantage compétitif au client"},
+        {"id": "P3", "q": "Livrez fréquemment un logiciel opérationnel avec des cycles de quelques semaines à quelques mois et une préférence pour les plus courts"},
+        {"id": "P4", "q": "Les utilisateurs ou leurs représentants et les développeurs doivent travailler ensemble quotidiennement tout au long du projet"},
+        {"id": "P5", "q": "Réalisez les projets avec des personnes motivées.Fournissez-leur l’environnement et le soutien dont ils ont besoin et faites-leur confiance pour atteindre les objectifs fixés"},
+        {"id": "P6", "q": "La méthode la plus simple et la plus efficace pour transmettre de l’information à l'équipe de développement et à l’intérieur de celle-ci est le dialogue en face à face"},
+        {"id": "P7", "q": "Un logiciel opérationnel est la principale mesure d’avancement"},
+        {"id": "P8", "q": "Les processus Agiles encouragent un rythme de développement soutenable. Ensemble, les commanditaires, les développeurs et les utilisateurs devraient être capables de maintenir indéfiniment un rythme constant"},
+        {"id": "P9", "q": "Une attention continue à l'excellence technique et à une bonne conception renforce l’Agilité"},
+        {"id": "P10", "q": "La simplicité – c’est-à-dire l’art de minimiser la quantité de travail inutile – est essentielle"},
+        {"id": "P11", "q": "Les meilleures architectures, spécifications et conceptions émergent d'équipes auto organisées"},
+        {"id": "P12", "q": "À intervalles réguliers, l'équipe réfléchit aux moyens de devenir plus efficace, puis règle et modifie son comportement en conséquence"}
+    ],
+    "resp": [
+        "Déjà en Place",
+        "Aisée à mettre en oeuvre",
+        "Possible mais en changeant l'organisation",
+        "Inconcevable ou je ne sais pas comment faire"
+    ]
+}
