@@ -1,5 +1,6 @@
 {
     "name": "base",
+    "type": "base",
     "sources": [
         {"id": "V1", "q": "Les individus et leurs interactions plus que les processus et les outils"},
         {"id": "V2", "q": "Des logiciels opérationnels plus qu’une documentation exhaustive"},

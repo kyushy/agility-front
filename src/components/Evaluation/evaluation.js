@@ -1,7 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 import { BaseModel } from '../Models/base'
-import { Card, Form, Button, Alert } from 'react-bootstrap'
+import { AdminModel } from '../Models/admin'
+import { Alert, Spinner } from 'react-bootstrap'
 import base from '../../templates/base.json'
 
 
@@ -9,11 +10,12 @@ export class Evaluation extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { loading: true };
+        this.state = { loading: true, model: (<Spinner animation="border" style={{marginTop: '25vh'}}/>) };
     }
 
     componentDidMount() {
-        let model = null
+        let model
+
         let url = window.location.href
         let sessID = url.split('/').pop()
 
@@ -22,13 +24,15 @@ export class Evaluation extends React.Component {
                 case 'base':
                     model = (<BaseModel template={base} />)
                     break
+                case 'admin':
+                    model= (<AdminModel />)
+                    break
                 default:
                     model = (<Alert variant="danger">Impossible de charger le template</Alert>)
             }
 
             this.setState({ loading: false, model: model , template: base})
         })
-        
     }
 
 
