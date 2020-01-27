@@ -14,7 +14,9 @@ export let SessionLog = () => {
         if(sessID === '')
             return
         
-        const res = await axios.get(process.env.REACT_APP_API_URL + 'sessions/' + sessID)
+        const res = await axios.get(process.env.REACT_APP_API_URL + 'sessions/' + sessID, {headers: {
+            'Access-Control-Allow-Origin': '*',
+          }})
         console.log(res)
         if(res.data !== null)
             if(res.data.open)
