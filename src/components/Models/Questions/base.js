@@ -1,9 +1,13 @@
-import React from 'react'
-import { Card, Form, Button } from 'react-bootstrap'
+import React, { useState } from 'react'
+import axios from 'axios'
+import { Card, Form, Button, Modal } from 'react-bootstrap'
 
 
 export let BaseModel = (props) => {
 
+    const [show, setShow] = useState(false);
+    const handleClose = () => { setShow(false); window.location.href = '/' }
+    const handleShow = () => setShow(true);
     
     let onValidate = () => {
         let result = []
@@ -16,9 +20,12 @@ export let BaseModel = (props) => {
         });
         if(result.length !== props.template.sources.length)
             alert('Il manque des reponses')
-        else
-            console.log(result)
+        else {
+            axios.post(process.env.REACT_APP_API_URL + 'results', {id: props.session, responses: result})
+            handleShow()
+        }       
     }
+
 
     return(
         <div className="BaseModel">
@@ -42,6 +49,19 @@ export let BaseModel = (props) => {
                 );
             })
         }
+            <Modal show={show}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Felicitation</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <p>Vous avez complété le questionnaire</p>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="success" onClick={handleClose}>
+                        Ok
+                    </Button>
+                </Modal.Footer>
+            </Modal>
             <Button onClick={onValidate} style={{backgroundColor: '#530087', borderColor: '#530087'}}>Valider</Button>
         </div>
     )

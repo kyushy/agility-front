@@ -10,11 +10,21 @@ export let SessionLog = () => {
 
     let goToSession = async () => {
         let sessID = document.getElementById("sessionForm.IdInput").value
-        const res = await axios.get(process.env.REACT_APP_API_URL + 'section/' + sessID)
-        if(res.data.access === 'ok')
-            window.location = '/section/' + sessID
+
+        if(sessID === '')
+            return
+        
+        const res = await axios.get(process.env.REACT_APP_API_URL + 'sessions/' + sessID)
+        console.log(res)
+        if(res.data !== null)
+            if(res.data.open)
+                window.location = '/session/' + sessID
+            else {
+                ReactDOM.render(<Alert variant="danger">Session verouillée</Alert>, 
+                    document.getElementById('errorBox'));
+            }
         else {
-            ReactDOM.render(<Alert variant="danger">Session ID est introuvable</Alert>, 
+            ReactDOM.render(<Alert variant="danger">Session introuvable</Alert>, 
                 document.getElementById('errorBox'));
         }
         

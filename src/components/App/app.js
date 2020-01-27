@@ -1,7 +1,9 @@
 import React from 'react'
 import { Header } from '../Header/header'
 import { SessionLog } from '../SessionLog/sessionLog'
-import { Evaluation } from '../Evaluation/evaluation'
+import { QContainer } from '../Containers/qContainer'
+import { RContainer } from '../Containers/rContainer'
+import { AdminModel } from '../Admin/admin'
 import {
   BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Container, Row } from 'react-bootstrap'
@@ -21,8 +23,14 @@ class App extends React.Component {
                 <Route exact path="/">
                   <SessionLog />
                 </Route>
-                <Route exact path="/section/:id">
-                  <Evaluation />
+                <Route exact path="/session/:id">
+                  <QContainer />
+                </Route>
+                <Route exact path="/result/:id">
+                  <RContainer />
+                </Route>
+                <Route exact path="/management">
+                  <AdminModel />
                 </Route>
               </Switch>
             </Router>
